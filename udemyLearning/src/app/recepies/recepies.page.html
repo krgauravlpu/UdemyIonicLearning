@@ -1,9 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>recepies</ion-title>
+  <ion-toolbar color="green">
+    <ion-title>Recipes</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let recpie of recipes">
+      <ion-avatar slot="start">
+        <ion-img [src]="recpie.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ recpie.title }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
