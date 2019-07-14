@@ -3,8 +3,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'recepies', pathMatch: 'full' },
-  { path: 'recepies', loadChildren: './recepies/recepies.module#RecepiesPageModule' },
-  { path: 'recipes-details', loadChildren: './recepies/recipes-details/recipes-details.module#RecipesDetailsPageModule' }
+  {
+    path: 'recepies',
+    children: [
+      {
+        path: '',
+        loadChildren: './recepies/recepies.module#RecepiesPageModule'
+      },
+      {
+        path: ':recipeId',
+        loadChildren:
+          './recepies/recipes-details/recipes-details.module#RecipesDetailsPageModule'
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -13,4 +25,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
