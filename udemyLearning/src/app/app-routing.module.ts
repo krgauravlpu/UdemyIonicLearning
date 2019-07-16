@@ -9,7 +9,9 @@ const routes: Routes = [
   { path: 'offers', loadChildren: './places/offers/offers.module#OffersPageModule' },
   { path: 'new-offer', loadChildren: './places/offers/new-offer/new-offer.module#NewOfferPageModule' },
   { path: 'edit-offer', loadChildren: './places/offers/edit-offer/edit-offer.module#EditOfferPageModule' },
-  { path: 'place-details', loadChildren: './places/discover/place-details/place-details.module#PlaceDetailsPageModule' }
+  { path: 'place-details', loadChildren: './places/discover/place-details/place-details.module#PlaceDetailsPageModule' },
+  { path: 'offer-bookings', loadChildren: './places/offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule' },
+  { path: 'bookings', loadChildren: './bookings/bookings.module#BookingsPageModule' }
   }
 ];
 
